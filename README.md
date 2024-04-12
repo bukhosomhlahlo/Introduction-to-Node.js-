@@ -32,4 +32,37 @@ The use of code sharing and the unification of the front-end and back-end in a c
 
 ###### Callbacks and Asynchronous Tasks
 
+Synchronous and asynchronous callbacks are both programming concepts related to how functions or tasks are executed in a program, particularly in environments where operations may take varying amounts of time to complete, such as network requests, file I/O, or database queries.
+<ul><li>Synchronous- In synchronous callbacks, the callback function is executed immediately after the completion of a certain operation or task.
+                     These callbacks are executed in a blocking manner, meaning the program waits for the callback function to finish executing before proceeding to the next line of code.
+
+
+<code>function synchronousTask(callback) {
+    *Perform some operation*
+    let result = doSomethingSynchronous();
+
+*Call the callback function*
+callback(result);
+}
+
+synchronousTask(function(result) {
+    console.log("Result:", result);
+});</code>
+                        
+ <li>Asynchronous- In asynchronous callbacks, the callback function is not executed immediately after the completion of the operation. Instead, it's scheduled to run at some later time, typically when the operation completes or a certain event occurs.
+Asynchronous callbacks are commonly used in scenarios where operations may take a significant amount of time to complete, such as network requests, file I/O, or user input.
+
+<code>function asynchronousTask(callback) {
+    // Perform some asynchronous operation, like an AJAX request
+    doSomethingAsynchronous(function(result) {
+        // Call the callback function when the operation is complete
+        callback(result);
+    });
+}
+
+asynchronousTask(function(result) {
+    console.log("Result:", result);
+});</code></ul>
+
+
 
